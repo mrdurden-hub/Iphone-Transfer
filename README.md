@@ -46,3 +46,20 @@ Para a melhor experiência no iPhone, recomendamos usar o **Google Chrome** como
 ## ✨ Simples, rápido e sem complicações!
 
 Transferência de arquivos nunca foi tão fácil. Obrigado por usar o *iPhone Transfer*!  
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob os termos da **Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0)**.  
+Você pode usá-lo, modificá-lo e distribuí-lo livremente, **desde que não para fins comerciais** e com devida atribuição.
+
+🔗 [Leia a licença completa](https://creativecommons.org/licenses/by-nc/4.0/)
+
+
+### 📦 Versão PRO
+
+A versão gratuita deste software é distribuída sob a Licença CC BY-NC 4.0.  
+Para acessar recursos exclusivos e avançados, adquira a **versão PRO** (distribuição com direitos reservados).
+
+➡️ Entre em contato para saber mais ou acompanhe o lançamento no nosso site oficial.

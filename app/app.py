@@ -7,8 +7,9 @@ import os
 import urllib.parse
 
 app = Flask(__name__, template_folder='static/templates', static_folder='static')
+username_os = os.getlogin()
 
-ROOT_DIR = os.path.abspath("C:/")  # ou os.getcwd() para raiz do projeto
+ROOT_DIR = os.path.abspath(f"C:/Users/{username_os}")  # ou os.getcwd() para raiz do projeto
 
 
 # 🧠 Detectar IP local da máquina

@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>📁 Dashboard de Arquivos</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
 </head>
 <body>
-
-        <div id="theme-toggle" class="theme-toggle" title="Alternar tema">
+    <div id="theme-toggle" class="theme-toggle" title="Alternar tema">
         <svg id="sun-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
             <path d="M12 4.5V2m0 20v-2.5M4.5 12H2m20 0h-2.5M5.64 5.64l-1.77-1.77M20.13 20.13l-1.77-1.77M18.36 5.64l1.77-1.77M3.87 20.13l1.77-1.77M12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10z" />
         </svg>
@@ -16,25 +15,41 @@
         </svg>
     </div>
 
-    <h1>📁 Navegador de Arquivos</h1>
 
     {% if back_url %}
         <a href="/dashboard/{{ back_url }}" class="back-link">⬅ Voltar</a>
     {% endif %}
 
-    <h2>📂 Pastas</h2>
-    <ul>
-        {% for name, path in dirs %}
-            <li><span class="emoji">📁</span><a href="/dashboard/{{ path }}">{{ name }}/</a></li>
-        {% endfor %}
-    </ul>
+    <h1>📂 Explorador de arquivos</h1>
 
-    <h2>📄 Arquivos</h2>
-    <ul>
-        {% for name, path in files %}
-            <li><span class="emoji">📄</span><a href="/dashboard/{{ path }}">{{ name }}</a></li>
-        {% endfor %}
-    </ul>
+<div class="file-list">
+    {% for name, path in dirs %}
+        <div class="item folder">
+          <span class="emoji">📁</span><a href="/dashboard/{{ path }}">{{ name }}/</a>
+        </div>
+    {% endfor %}
+
+    {% for name, path in files %}
+
+        <div class="item file">
+          {% set name_lower = name.lower() %} 
+
+          {% if name_lower.endswith('.png') or name_lower.endswith('.jpg') or name_lower.endswith('.jpeg') %}
+              <img src="/dashboard/{{ path }}" alt="{{ name }}" class="preview-img">
+          {% elif name_lower.endswith('.mp4') %}
+              <video class="preview-video" controls>
+                  <source src="/dashboard/{{ path }}" type="video/mp4">
+                  Seu navegador não suporta vídeo.
+              </video>
+          {% else %}
+              <div class="file-icon">📄</div>
+          {% endif %}
+
+          <div class="file-name">{{ name }}</div>
+          <a class="download-btn" href="/dashboard/{{ path }}" download>⬇️ Baixar</a>
+        </div>
+      {% endfor %}
+    </div>
 </body>
 <script>
   const toggle = document.getElementById('theme-toggle');

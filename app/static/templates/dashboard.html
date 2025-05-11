@@ -41,6 +41,17 @@
                   <source src="/dashboard/{{ path }}" type="video/mp4">
                   Seu navegador não suporta vídeo.
               </video>
+          {% elif name_lower.endswith('.mp3') %} 
+              <audio controls>
+                <source src="/dashboard/{{ path }}" type="audio/mpeg">
+                Seu navegador não suporta mp3.
+              </audio>
+
+              {% elif name_lower.endswith('.pdf') %} 
+              <object type="application/pdf" data="/dashboard/{{ path }}" width="100%" height="100%">
+                <a href="/dashboard/{{ path }}"></a>
+              </object>>
+
           {% else %}
               <div class="file-icon">📄</div>
           {% endif %}
@@ -50,6 +61,11 @@
         </div>
       {% endfor %}
     </div>
+    <footer class="footer">
+      <br>
+      Licença: Uso pessoal e não comercial permitido sob CC BY-NC 4.0.
+      Para usos comerciais, entre em contato com o autor.
+    </footer>
 </body>
 <script>
   const toggle = document.getElementById('theme-toggle');

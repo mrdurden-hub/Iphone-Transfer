@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>iPhone Transfer - Compartilhe arquivos com seu iPhone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      width: 100%;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #00ffcc;
+    }
+
+    .container {
+      max-width: 900px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    img.screenshot {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 4px 20px rgba(0, 255, 200, 0.3);
+    }
+
+    .download-btn {
+      background-color: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #00c9a7;
+    }
+
+    section.instructions {
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    section.instructions h2 {
+      color: #00ffcc;
+    }
+
+    section.instructions ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: #1f1f1f;
+      width: 100%;
+      text-align: center;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .download-btn {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      section.instructions {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚀 iPhone Transfer</h1>
+    <p>Transfira arquivos do seu PC para o iPhone de forma simples e rápida</p>
+  </header>
+
+  <div class="container">
+    <img class="screenshot" src="screenshot.png" alt="Demonstração do app">
+
+    <a class="download-btn" href="https://github.com/mrdurden-hub/Iphone-Transfer/releases/download/v1.0/iphone-transfer.zip" target="_blank">
+      📥 Baixar iPhone Transfer (.zip)
+    </a>
+
+    <section class="instructions">
+      <h2>📱 Como Usar:</h2>
+      <ul>
+        <li>1. Baixe e extraia o arquivo ZIP (senha: <code>iphone-transfer</code>)</li>
+        <li>2. Execute o arquivo <strong>.exe</strong></li>
+        <li>3. Um navegador abrirá automaticamente com um QR Code</li>
+        <li>4. Escaneie o QR Code com seu iPhone</li>
+        <li>5. Acesse os arquivos do PC diretamente no celular</li>
+      </ul>
+
+      <p><strong>Dica:</strong> use o navegador Google Chrome no iPhone para melhor compatibilidade.</p>
+    </section>
+  </div>
+
+  <footer>
+    Feito com ❤️ por [Seu Nome] — Código aberto no <a href="https://github.com/mrdurden-hub/Iphone-Transfer" target="_blank" style="color: #00ffcc;">GitHub</a>
+  </footer>
+
+</body>
+</html>

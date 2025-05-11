@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>📱 IPhone Transfer</title>
+    <link rel="stylesheet" href="/static/css/qrcode.css">
+</head>
+<body>
+    <div id="theme-toggle" class="theme-toggle" title="Alternar tema">
+        <svg id="sun-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 4.5V2m0 20v-2.5M4.5 12H2m20 0h-2.5M5.64 5.64l-1.77-1.77M20.13 20.13l-1.77-1.77M18.36 5.64l1.77-1.77M3.87 20.13l1.77-1.77M12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10z" />
+        </svg>
+        <svg id="moon-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </div>
+
+    <h1>📲 Escaneie o QR Code</h1>
+    <p>Abra a câmera do seu Iphone ou um leitor de QR Code para acessar os arquivos deste computador.</p>
+    <p>Após escanear o qrcode é só abrir o link e começar a navegar sobre as pastas que quiser e fazer o download. 😉</p>
+    <div class="qrcode-container">
+        <img src="/qrcode"  alt="QR Code gerado dinamicamente">
+    </div>
+
+    <div class="footer">
+        Servidor de Arquivos Local • Desenvolvido para usuarios de Iphone. 📱
+    </div>
+</body>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const sun = document.getElementById('sun-icon');
+  const moon = document.getElementById('moon-icon');
+  const body = document.body;
+
+  function setTheme(mode) {
+    if (mode === 'dark') {
+      body.classList.add('dark-mode');
+      moon.style.display = 'none';
+      sun.style.display = 'block';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.remove('dark-mode');
+      sun.style.display = 'none';
+      moon.style.display = 'block';
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  toggle.addEventListener('click', () => {
+    if (body.classList.contains('dark-mode')) {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  });
+
+  // Detecta tema salvo ou do sistema
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else if (prefersDark) {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
+</script>
+
+
+</html>

@@ -1,10 +1,12 @@
 # app/app.py
 
-from flask import Flask, send_from_directory, render_template, send_file
+from flask import Flask, send_from_directory, render_template, send_file, Response
 import socket
 import qrcode
 import os
 import urllib.parse
+from io import BytesIO
+import webbrowser
 
 app = Flask(__name__, template_folder='static/templates', static_folder='static')
 username_os = os.getlogin()
@@ -25,9 +27,24 @@ def get_local_ip():
         s.close()
     return ip
 
+
+@app.route('/qrcode')
+def generate_qrcode():
+    ip = get_local_ip()
+    port = 5000
+    url = f"http://{ip}:{port}/dashboard"
+    
+    qr_img = qrcode.make(url)
+    img_io = BytesIO()
+    qr_img.save(img_io, 'PNG')
+    img_io.seek(0)
+    return Response(img_io, mimetype='image/png')
+
+
+
 @app.route('/')
 def index():
-    return render_template('index.html')  # Exibe o HTML da pasta templates
+    return render_template('qrcode.html')  # Exibe o HTML da pasta templates
 
 
 @app.route('/dashboard', defaults={'req_path': ''})
@@ -74,13 +91,9 @@ def download_file(filename):
 if __name__ == '__main__':
     ip = get_local_ip()
     port = 5000
-    url = f"http://{ip}:{port}/dashboard"
+    url = f"http://{ip}:{port}/"
 
-    # ✅ Gerar QR Code para acesso via celular
-    qr = qrcode.make(url)
-    qr_path = "app/static/qrcode.png"
-    qr.save(qr_path)
-    print(f"\nAcesse com seu celular: {url}")
-    print(f"Ou escaneie o QR Code salvo em: {qr_path}\n")
-
+    # 🧠 Abre o navegador automaticamente com a página principal
+    webbrowser.open(url)
+                    
     app.run(host='0.0.0.0', port=port)

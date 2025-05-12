@@ -4,8 +4,6 @@
 
 📥 Download: <https://mrdurden-hub.github.io/Iphone-Transfer/>
 
-🔐 A senha é: `iphone-transfer`
-
 Este programa tem como objetivo **facilitar a transferência de arquivos entre seu PC e um iPhone**, de forma rápida, simples e sem precisar de cabos ou programas pesados.
 
 <img class="screenshot" src="screenshot.png" alt="Demonstração do app">
@@ -23,8 +21,7 @@ Assim, você pode acessar fotos, vídeos, PDFs, músicas e qualquer outro arquiv
 ## 📦 Como Usar?
 
 1. **Descompacte o arquivo ZIP**  
-   🔐 A senha é: `iphone-transfer`
-
+   
 2. **Execute o programa (.exe)**  
    Dê dois cliques no arquivo. Automaticamente o navegador será aberto exibindo um **QR Code**.
 
